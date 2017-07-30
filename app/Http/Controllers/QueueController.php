@@ -558,12 +558,12 @@ class QueueController extends Controller
 		{
 				if ( ! $this->areAppointmentsAccepted($queue_id) ) 
 				{
-					return response('Unauthorized', 401)
+					return response('No Data', 203)
 						->header('Content-Type', 'application/json')
 						->setContent([
 							'error' => true,
-							'code'  => 12,
-							'details'  => ['message'   => 'Bookings closed', 'exception' => $e ]]);
+							'code'  => 21,
+							'details'  => ['message'   => 'Bookings closed']]);
 				}
 				
 				try {
